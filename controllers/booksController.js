@@ -6,7 +6,11 @@ const booksController = {
     response.json({ books: booksIndex })
   },
 
-  async show() {},
+  async show(request, response, next) {
+    const { id } = request.params
+    const book = await models.Book.findByPk(id)
+    response.json({book})
+  },
 };
 
 module.exports = booksController;
