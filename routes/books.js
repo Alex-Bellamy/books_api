@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const booksController = require('../controllers/booksController')
 
 /* GET users listing. */
-router.get('/', (req, res) => {
-  res.json({ books: [{ title: 'Alex life' }] });
-});
+router.get('/', booksController.index);
 
 module.exports = router;

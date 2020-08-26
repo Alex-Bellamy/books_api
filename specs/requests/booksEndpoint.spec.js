@@ -22,10 +22,7 @@ describe("GET /api/v1/books", () => {
     expect(response.status).to.equal(200);
   });
 
-  it("is expected to respond with list of books", async () => {
-    const expectedResponse = {
-      books: [{ title: "Alex life" }],
-    };
-    expect(response.body).to.deep.equal(expectedResponse);
+  it("is expected to respond with two books", () => {
+    expect(response.body['books'].length).to.equal(2);
   });
 });
